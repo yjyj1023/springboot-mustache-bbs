@@ -10,8 +10,8 @@ public class MustacheController {
 
     @GetMapping(value = "/hi")
     public String mustacheCon(Model model){
-        model.addAttribute("username","rok");
-        return "greetings";
+        model.addAttribute("username","rok"); // view에 값을 넘긴다.
+        return "greetings"; // greetings라는 이름의 view를 리턴한다.
     }
 
     @GetMapping(value = "/hi/{id}")
