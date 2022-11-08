@@ -30,7 +30,7 @@ public class ArticleController {
         return "articles/new";
     }
 
-    @GetMapping(value = "")
+    @GetMapping("")
     public String index() {
         return "redirect:/articles/list";
     }
@@ -57,9 +57,10 @@ public class ArticleController {
 
     @PostMapping(value = "/posts")
     public String createArticle(ArticleDto form) {
-        log.info(form.toString());
-        Article article = form.toEntity();
-        articleRepository.save(article); //save 메소드를 사용해 DB에 저장
-        return String.format("redirect:/articles/%d", article.getId());
+        log.info(form.getTitle());
+        Article savedArticle = articleRepository.save(form.toEntity());
+        log.info("generatedId:{}", savedArticle.getId());
+        // souf %d %s
+        return String.format("redirect:/articles/%d", savedArticle.getId());
     }
 }
