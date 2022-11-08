@@ -1,12 +1,12 @@
 {{>layouts/header}}
 <form action="/articles/posts" method="post">
     <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">title</label>
+        <label class="form-label">title</label>
         <input type="text" class="form-control" name="title" placeholder="제목을 입력하세요.">
     </div>
     <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">content</label>
-        <input type="text" class="form-control" name="content" placeholder="내용을 입력하세요."></input>
+        <label class="form-label">content</label>
+        <textarea class="form-control" rows="3" name="content" placeholder="내용을 입력하세요."></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a href="/articles">back</a>
